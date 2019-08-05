@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- xml 配置文件包含对 MyBatis 系统的核心配置 -->
+<configuration>
+
+    <!--<properties resource="db.properties">-->
+    <!--</properties>-->
+
+    <!--不清楚是什么原因导致的这个 db.properties 无法被找到，即使找到了在文件内部的驱动之类的也没有高亮显示-->
+    <!--并且 idea 提示这个文件体并没有被使用。-->
+
+
+
+    <!-- 指定 MyBatis 所用日志的具体实现 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <!--要使延迟加载生效必须配置下面两个属性-->
+        <!--<setting name="lazyLoadingEnabled" value="true"/>-->
+        <!--<setting name="aggressiveLazyLoading" value="false"/>-->
+    </settings>
+
+
+    <!-- 环境配置， 即连接的数据库 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!-- 指定事务管理类型，type="JDBC" 指直接简单使用了 JDBC 的提交和回滚设置 -->
+            <transactionManager type="JDBC"/>
+            <!-- dataSourse 指数据源配置，POOLED 是 JDBC 连接对象的数据源连接池的实现 -->
+
+
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="${driver}"/>-->
+                <!--<property name="url" value="${url}"/>-->
+                <!--<property name="username" value="${username}"/>-->
+                <!--<property name="password" value="${password}"/>-->
+            <!--</dataSource>-->
+
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/exclusive?serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- mappers 告诉了 MyBatis 去哪里找持久化类的映射文件 -->
+        <mapper resource="houtai/mapper/CommentMapper.xml"/>
+        <mapper resource="houtai/mapper/SuperMapper.xml"/>
+        <mapper resource="qiantai/mapper/CommentMapper.xml"/>
+        <mapper resource="houtai/mapper/WorkerMapper.xml"/>
+
+    </mappers>
+
+</configuration>

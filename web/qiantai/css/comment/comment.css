@@ -1,0 +1,61 @@
+.list_pingfen{
+    margin-top: 40px;
+}
+.pingfen_font1,.pingfen_font2{
+    font-family: 幼圆;
+    font-size:1.5rem;
+}
+.pingfen_font1{
+    color: #fbfbfb;
+}
+.pingfen_font2{
+    color: orange;
+}
+
+.ho_user_icon{
+    text-align: center;
+ /*   margin: auto;*/
+    margin-top: 9%;
+    margin-bottom: 8%;
+}
+.img-circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+}
+.gray_color{
+    font-family: 幼圆;
+    color: white;
+    font-size: 1.4rem;
+}
+.jiange{
+    margin-left: 2em;
+}
+.a_btn{
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+    font-family: 幼圆;
+    font-size: 1.4rem;
+    color: #333333;
+    display: inline-block;
+    width:5vw;
+    height: 2vw;
+    background: #fcfcfc;
+    margin-left: 5%;
+}
+.a_btn:hover{
+    text-decoration: none;
+    background: #fc951e;
+    color:white;
+
+}
+.curent_yeshu{
+    font-family: 幼圆;
+    font-size: 1.4rem;
+    color: white;
+}

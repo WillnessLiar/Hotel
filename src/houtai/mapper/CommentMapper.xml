@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="houtai.mapper.CommentMapper">
+    <!--/**-->
+    <!--* 查询全部酒店评论-->
+    <!--查询全部评论中的 分页 功能也是使用下面这条sql语句-->
+    <!--* */-->
+    <select id="getCommentList" resultType="houtai.Model.PublicBean">
+        select * from reviewinfo limit #{pagesNo},#{pageSize}
+    </select>
+
+    <select id="getCommentList1" resultType="houtai.Model.PublicBean">
+        select * from reviewinfo
+    </select>
+
+<!--条件查询酒店评论-->
+    <select id="getCommentListWithLike" resultType="houtai.Model.PublicBean">
+        select * from reviewinfo where concat(reviewId,cusId,bookId,reviewType,reviewScore,content,reviewDate) like ? limit ?,?
+    </select>
+
+    <!--查询所有酒店评论条数-->
+    <select id="getCommentCount" resultType="int">
+        select count(*) from reviewinfo
+    </select>
+
+    <!--条件查询酒店评论条数-->
+    <select id="getCommentCountWithLike" resultType="int">
+        select count(*) from reviewinfo where concat(reviewId,cusId,bookId,reviewType,reviewScore,content,reviewDate) like ?
+    </select>
+
+    <!--后台登陆查询是否存在 superManage-->
+    <select id="getSuperManage" resultType="houtai.Model.SuperManageBean">
+        select * from supermanager where loginId = ? and passwd = ?
+    </select>
+
+    <!--在后台，更新评论，修改评论-->
+    <update id="getRsualt" parameterType="houtai.Model.PublicBean">
+        update reviewinfo set content = #{content} where reviewid = #{reviewId}
+    </update>
+
+    <!--在后台，删除评论-->
+    <delete id="getDeleteRsualt" parameterType="houtai.Model.PublicBean">
+        delete from reviewinfo where reviewId = #{reviewId}
+    </delete>
+
+    <!--后台查询 strValue 条件的 评论-->
+    <select id="getSearchesComment" resultType="houtai.Model.PublicBean">
+        select * from reviewinfo where concat(reviewId,cusId,bookId,reviewType,reviewScore,content,reviewDate) like  #{strValue} limit #{pagesNo}, #{pageSize}
+    </select>
+
+    <!--*******************************************************************************************************************-->
+
+    <!--查询全部用户信息-->
+    <select id="getCustomerList" resultType="qiantai.Model.CustomerBean">
+        select * from customer limit #{pagesNo},#{pageSize}
+    </select>
+
+    <!--修改用户信息-->
+    <update id="getUpdate" parameterType="qiantai.Model.CustomerBean">
+        update customer set cusPasswd = #{cusPasswd}, trueName = #{trueName}, cusPhone = #{cusPhone}, cusSex = #{cusSex}, cusImg = #{cusImg} where cusId = #{cusId}
+    </update>
+
+    <!--删除用户信息-->
+    <delete id="getDelete" parameterType="qiantai.Model.CustomerBean">
+        delete from customer where cusId = #{cusId}
+    </delete>
+
+    <!--查询所有用户数量-->
+    <select id="getCustomerCount" resultType="int">
+        select count(*) from customer
+    </select>
+
+    <!--***************************************注册************************************************************************-->
+    <select id="checkCusId" resultType="qiantai.Model.CustomerBean">
+        select * from customer where cusId = #{cusId}
+    </select>
+
+    <!--检测手机号是否已存在-->
+    <select id="checkPhone" resultType="qiantai.Model.CustomerBean">
+        select * from customer where cusPhone = #{cusPhone}
+    </select>
+
+</mapper>

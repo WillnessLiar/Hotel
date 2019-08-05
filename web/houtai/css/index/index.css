@@ -1,0 +1,93 @@
+body{
+    overflow: hidden;
+
+}
+/*左边*/
+.main_left{
+background: #343434;
+    color:white;
+    height: 100%;
+
+}
+
+.li_a{
+    text-decoration: none;
+    display: block;
+    height: 3vw;
+    line-height: 3vw;
+}
+
+.li_a:hover{
+    text-decoration: none;
+    background-color: #bbbbbb;
+    transition:all 0.7s ease;
+    cursor: pointer;
+}
+
+.a_daohang{
+    text-decoration: none;
+    color:white;
+    font-family: 幼圆;
+    font-size: 1.1vw;
+
+}
+
+.a_daohang:visited{
+    text-decoration: none;
+    color:white;
+}
+.a_daohang:link{
+    text-decoration: none;
+    color:white;
+}
+.a_daohang:hover{ /*hover必须放在visited（已访问链接）和link之后 */
+    text-decoration: none;
+    color:white;
+}
+
+/*menu字体*/
+.p1{
+    height:4vw;
+    background: #FFF;
+    line-height: 4vw;
+    color:black;
+    margin: 0;
+    padding:0;
+
+
+}
+/*右上*/
+.main_right_top{
+    height: 4vw;
+    background: #343434;
+
+}
+
+.img_color{
+    background: white;
+    height: 4vw;
+    margin-left: -15px;
+}
+/*左 DIV*/
+.ld{ float: left;
+    width:15vw;
+    position: fixed;
+    left: -15vw;  /*先隐藏*/
+    height: 100%;
+    transition:all 1s ease 0s;
+}
+/*右DIV*/
+.rd{
+    background: black;
+    left:0;
+    transition:all 1s ease 0s;
+
+}
+#n{
+    left: 0;
+}
+/*右下*/
+#main_right_bottom{
+    left:0;
+    transition:all 1s ease 0s;
+}

@@ -1,0 +1,16 @@
+.hov{
+    font-family: 幼圆;
+    font-size: 1.4rem;
+    color: black;
+}
+.hov:hover{
+    background: rgba(117, 117, 117, 0.52);
+    cursor:pointer;
+    color: white;
+}
+.badge_color{
+    background: blueviolet;
+}
+.img_size{
+    width:16px;height: 16px;
+}

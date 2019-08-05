@@ -1,0 +1,65 @@
+/*后台管理系统登录界面*/
+* { padding:0 auto;
+    margin:0 auto; }
+.content{
+    width:100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+.main{
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    width:30vw;
+    height:40vh;
+    background-color: white;
+    border-radius: 0.02em;
+}
+.user-div{
+    position: relative;
+    top:12vh;
+}
+.pwd-div{
+    position: relative;
+    margin-top: 14vh;
+
+}
+/*账号密码输入框*/
+.login-input{
+    display: inline-block;
+    /*border-color: #FF9900;*/
+    width:40%;
+    height:4vh;
+    /*border-radius: 0.1em;*/
+    font-family: 幼圆;
+    /*background-color: #443c0a;*/
+    /*box-shadow: 0.5px -0.5px 10px #9b9a8b;*/
+}
+h4{
+    font-family:幼圆;
+    font-size:1em;
+    color: #000000;
+    display: inline-block;
+}
+/*提交按钮*/
+.submit input{
+    position: relative;
+    margin-left: -5vw;
+    border-radius: 0.05em;
+    cursor: pointer;
+    margin-top: 2vh;
+    border: #ff9f00;
+    background:none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgb(251, 249, 255);
+    font-family: 微软雅黑;
+    font-size:1.1em;
+}
+ h3{
+    font-family: 幼圆;
+    color: #000000;
+     position: relative;
+    top:7vh;
+
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="houtai.mapper.SuperMapper">
+    <!--后台登陆 superManage 的查询是否存在的sql语句-->
+
+    <select id="getSuperManage" resultType="houtai.Model.SuperManageBean">
+        select * from supermanager where loginId = #{loginId} and passwd = #{passwd}
+    </select>
+
+    <select id="getSuper" resultType="houtai.Model.SuperManageBean" >
+        select * from supermanager
+    </select>
+
+
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qiantai.mapper.CommentMapper">
+    <!--/**-->
+    <!--* 查询全部酒店评论-->
+    <!--查询全部评论中的 分页 功能也是使用下面这条sql语句-->
+    <!--* */-->
+    <select id="getCommentList" resultType="houtai.Model.PublicBean">
+        select * from reviewinfo limit #{pageNo},#{pageSize}
+    </select>
+
+    <!--返回 reviewinfo 里 reviewScore 的sum值-->
+    <select id="queryPercent" resultType="int">
+        select sum(reviewScore) from reviewinfo
+    </select>
+
+    <!--查询所有酒店评论条数-->
+    <select id="getCommentCount" resultType="int">
+        select count(*) from reviewinfo
+    </select>
+
+    <!--*********************************************特殊情况！！！！！**********************************************************-->
+    <select id="getLogin" resultType="qiantai.Model.CustomerBean">
+        select * from customer where cusId = #{cusId} and cusPasswd = #{cusPasswd}
+    </select>
+
+    <select id="getBookSum" resultType="int">
+        select COUNT(*) from bookinfo where cusId = #{cusId} and bookState = #{bookState}
+    </select>
+
+    <select id="getRrviewSum" resultType="int">
+        select count(*) from bookinfo where cusId = #{cusId} and bookState = #{bookState} and isReview = #{isReview}
+    </select>
+
+    <!--查询订单，已完成未评价   对应在在exclusive 的personal.java的BookDao里。为赶时间 三表联合查询 分解为三个独立的sql语句-->
+
+    <!--返回的是ArrayList-->
+    <select id="showBook" resultType="qiantai.Model.BookBean">
+        select * from bookinfo where cusId = #{cusId} and bookState = #{bookState} and isReview = #{isReview}
+    </select>
+    <select id="showRoomType" resultType="qiantai.Model.RoomInfoBean">
+        select * from roominfo where roomId = #{roomId}
+    </select>
+    <select id="showOrder" resultType="qiantai.Model.RoomBean">
+        select * from roomtype where roomTypeId = #{roomTypeId}
+    </select>
+
+
+    <!--在 待评论 点击后 插入评论 sql-->
+    <insert id="publicReview" parameterType="houtai.Model.PublicBean">
+        insert into reviewinfo(reviewId, cusId, bookId, reviewType, reviewScore, content, reviewDate) values(#{reviewId}, #{cusId}, #{bookId}, #{reviewType}, #{reviewScore}, #{content}, #{reviewDate})
+    </insert>
+
+    <!--(修改)未评价 到 已评价  上面方法的函数体中-->
+    <update id="finshReview" parameterType="qiantai.Model.BookBean">
+        update bookinfo SET  isReview = #{isReview} where bookId = #{bookId}
+    </update>
+
+    <!--查询订单待评价的条数 (已完成（1）但还没评价（0）)-->
+    <select id="reviewSum" resultType="int">
+        select count(*) from bookinfo where cusId = #{cusId} and bookState = #{bookState} and isReview = #{isReview}
+    </select>
+
+
+
+
+
+
+</mapper>

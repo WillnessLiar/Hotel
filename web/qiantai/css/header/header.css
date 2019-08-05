@@ -1,0 +1,176 @@
+body {
+    font-weight: 400;
+
+    padding-top: 73px;  /*由于导航栏是固定的*/
+}
+
+@media (max-width: 767px){
+    body{
+    padding-top:50px;  /*该设置是适应手机的显示*/;
+    }
+    #img_info{
+        display: none;
+    }
+}
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+    margin: 0;
+}
+
+.navbar {
+    border-width: thin;
+    -webkit-transition: .2s;
+    border-bottom: 2px solid #ffa500;
+    background-color:#2d2d2d;
+}
+
+.navbar a {
+    /*color: black;*/
+    color:white;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+.navbar-header .icon-bar {
+    background-color: black;
+}
+
+.navbar-nav > li > .navbar-active {
+    color: #ffa500;
+}
+
+/*.navbar-scroll {
+    background-color: white;
+    animation-duration: 2s;
+    animation-name: smooth;
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
+}*/
+
+.jupytercon-nav > li > .black-tab {
+    color: black;
+
+}
+
+.navbar-logo {
+    padding-top: 10px;
+    height: 53px;
+}
+
+.nav > li > a {
+    font-size: 16px;
+    padding: 12px 35px 10px;
+}
+
+.nav > li > a:hover {
+    background-color: transparent;
+    color: #ffa500;
+    -webkit-transition: .2s;
+}
+
+.nav > li > a:focus {
+    background-color: white;
+}
+
+.nav > li > a:active {
+    background-color: #F8F8F8;
+}
+
+.nav > li > a:visited {
+    background-color: #F8F8F8;
+}
+.tab{
+    font-family: 幼圆;
+}
+.tab:hover {
+    background-color: transparent;
+    color: #ffa500;
+}
+
+
+/*注册登录样式start*/
+#my_button:hover{ /*登录提交按钮*/
+    background: #aeec9a;
+    border: 1px solid white;
+    color: white;
+}
+#zhuce:hover{  /*注册提交按钮*/
+    background: #62c6ff;
+    border: 1px solid #62c6ff;
+}
+.input_indent{text-indent:30px;
+}
+.img_icon{
+    position: absolute;left:24px;
+    top:6px;
+    background-repeat: no-repeat; /*设置图片不重复*/
+    width: 24px; /*设置图片显示的宽*/
+    height:24px;  /*图片显示的高*/
+
+}
+.img_iconR{
+    position: absolute;left:84%;
+    top:8px;
+    background-repeat: no-repeat; /*设置图片不重复*/
+    width: 18px; /*设置图片显示的宽*/
+    height:18px;  /*图片显示的高*/
+}
+/*注册登录样式end*/
+.td{
+    border-style:none;
+    /*background: rgba(203, 203, 203, 0.34);*/
+    background: #464646;
+    width:80px;
+    /*   color: rgb(144, 144, 144);*/
+    color: white;
+}
+.td:hover{
+    color: #fefefe;
+    background: rgb(142, 142, 142);
+    cursor: pointer;
+}
+
+
+.o_fc{
+    color: rgba(117, 117, 117, 0.73);
+
+}
+.space_1{
+    width:20px;height: 20px;margin-left: 10px;
+}
+.space_2{
+    margin-left: 10px;
+}
+.span1{
+    color:#e21607;
+    font-family: 微软雅黑
+}
+
+/*上传文件按钮*/
+.file_box{
+    display: inline-block;
+    margin-top: 48px;
+    padding: 3px 5px;
+    overflow: hidden;
+    color:#fff;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+}
+.file_btn{
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    top: 0;
+    left: 0;
+    outline: none;
+    background-color: transparent;
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    cursor: pointer;
+    opacity: 0;
+
+}
